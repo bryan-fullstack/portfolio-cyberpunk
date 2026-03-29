@@ -4,7 +4,7 @@ import { GamerLogo } from "./gamer-logo"
 const navLinks = [
   { name: "Inicio", href: "/#home" },
   { name: "Habilidades", href: "/#about" },
-  { name: "Operacoes", href: "/#operacoes" },
+  { name: "Projetos", href: "/#operacoes" },
 ]
 
 export function Navbar() {
@@ -14,7 +14,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-3">
           <GamerLogo className="drop-shadow-[0_0_16px_rgba(6,182,212,0.5)]" />
           <span className="hidden font-mono text-sm font-bold uppercase tracking-[0.15em] text-slate-100 sm:block">
-            CYBER_NEXUS
+            NEXUS_DEV
           </span>
         </Link>
 

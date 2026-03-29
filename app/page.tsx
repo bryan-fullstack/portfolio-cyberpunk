@@ -207,8 +207,8 @@ export default function Home() {
                   
                   {/* Placeholder image */}
                   <img 
-                    src="/placeholder.svg" 
-                    alt="Avatar do Commander Bryan"
+                    src="/avatar.png" 
+                    alt="Avatar do Bryan"
                     className="h-full w-full object-cover opacity-80"
                   />
                   
