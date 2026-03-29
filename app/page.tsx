@@ -17,11 +17,11 @@ import {
 import { Navbar } from "@/components/navbar"
 
 const habilidades = [
-  { name: "React", level: 92, icon: Code },
-  { name: "TypeScript", level: 89, icon: Terminal },
-  { name: "Tailwind CSS", level: 94, icon: Layers },
-  { name: "Node.js", level: 87, icon: Server },
-  { name: "PostgreSQL", level: 85, icon: Database },
+  { name: "React", icon: Code, status: "OPERACIONAL" as const },
+  { name: "TypeScript", icon: Terminal, status: "OPERACIONAL" as const },
+  { name: "Tailwind CSS", icon: Layers, status: "OPERACIONAL" as const },
+  { name: "Node.js", icon: Server, status: "EM TREINAMENTO" as const },
+  { name: "PostgreSQL", icon: Database, status: "EM TREINAMENTO" as const },
 ]
 
 const operacoes = [
@@ -113,74 +113,119 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Status badge */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="relative mb-6 inline-flex items-center gap-2 rounded-full border border-fuchsia-500/30 bg-fuchsia-500/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-300"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-fuchsia-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-fuchsia-500" />
-              </span>
-              Sistema Online
-            </motion.div>
+            {/* Responsive layout: text left, avatar right on desktop */}
+            <div className="relative flex flex-col-reverse items-center gap-8 lg:flex-row lg:items-start lg:justify-between">
+              {/* Text content */}
+              <div className="flex-1">
+                {/* Status badge */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3, duration: 0.6 }}
+                  className="relative mb-6 inline-flex items-center gap-2 rounded-full border border-fuchsia-500/30 bg-fuchsia-500/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-fuchsia-300"
+                >
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-fuchsia-400 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-fuchsia-500" />
+                  </span>
+                  Sistema Online
+                </motion.div>
 
-            {/* Main title with holographic glitch effect */}
-            <div className="relative mb-6">
-              <motion.h1
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-                className="relative text-balance font-mono text-4xl font-black uppercase tracking-[0.08em] text-white sm:text-6xl lg:text-7xl"
+                {/* Main title with holographic glitch effect */}
+                <div className="relative mb-6">
+                  <motion.h1
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.4, duration: 0.8 }}
+                    className="relative text-balance font-mono text-4xl font-black uppercase tracking-[0.08em] text-white sm:text-6xl lg:text-7xl"
+                  >
+                    <span className="relative z-10 bg-gradient-to-r from-white via-cyan-100 to-white bg-clip-text text-transparent">
+                      COMMANDER BRYAN
+                    </span>
+                    {/* Holographic layers */}
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute inset-0 -translate-y-[2px] translate-x-[3px] bg-gradient-to-r from-cyan-400 to-cyan-300 bg-clip-text text-transparent opacity-50 blur-[1px]"
+                    >
+                      COMMANDER BRYAN
+                    </span>
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute inset-0 translate-y-[2px] -translate-x-[3px] bg-gradient-to-r from-fuchsia-500 to-fuchsia-400 bg-clip-text text-transparent opacity-40"
+                    >
+                      COMMANDER BRYAN
+                    </span>
+                  </motion.h1>
+                  
+                  {/* Subtle glow under title */}
+                  <div className="absolute -bottom-4 left-0 h-px w-full bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
+                </div>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 0.6 }}
+                  className="mb-8 max-w-2xl font-mono text-lg text-slate-400 sm:text-xl"
+                >
+                  <span className="text-cyan-400">&gt;</span> Desenvolvedor Full Stack <span className="text-fuchsia-400">/</span> Especialista em Sistemas
+                </motion.p>
+
+                <motion.a
+                  href="#operacoes"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.8, duration: 0.6 }}
+                  whileHover={{ scale: 1.02, boxShadow: "0 0 40px rgba(6,182,212,0.4)" }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group relative inline-flex items-center gap-3 overflow-hidden rounded-lg border border-cyan-400/40 bg-gradient-to-r from-cyan-500/20 to-cyan-500/10 px-8 py-4 font-mono text-sm font-semibold uppercase tracking-[0.15em] text-cyan-100 transition-all duration-300 hover:border-cyan-400/60"
+                >
+                  <span className="relative z-10 flex items-center gap-3">
+                    INICIAR SISTEMA
+                    <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                  <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
+                </motion.a>
+              </div>
+
+              {/* Cyberpunk Avatar Frame */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="relative shrink-0"
               >
-                <span className="relative z-10 bg-gradient-to-r from-white via-cyan-100 to-white bg-clip-text text-transparent">
-                  COMMANDER BRYAN
-                </span>
-                {/* Holographic layers */}
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 -translate-y-[2px] translate-x-[3px] bg-gradient-to-r from-cyan-400 to-cyan-300 bg-clip-text text-transparent opacity-50 blur-[1px]"
+                {/* Outer glow ring */}
+                <div className="absolute -inset-4 rounded-2xl bg-gradient-to-br from-cyan-500/30 via-fuchsia-500/20 to-cyan-500/30 blur-xl" />
+                
+                {/* Main avatar container with angular clip-path */}
+                <div 
+                  className="relative h-48 w-48 overflow-hidden border-2 border-cyan-400/60 bg-slate-900/80 shadow-[0_0_30px_rgba(6,182,212,0.4),inset_0_0_20px_rgba(6,182,212,0.1)] backdrop-blur-md sm:h-56 sm:w-56 lg:h-64 lg:w-64"
+                  style={{ clipPath: "polygon(0 10%, 10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%)" }}
                 >
-                  COMMANDER BRYAN
-                </span>
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 translate-y-[2px] -translate-x-[3px] bg-gradient-to-r from-fuchsia-500 to-fuchsia-400 bg-clip-text text-transparent opacity-40"
-                >
-                  COMMANDER BRYAN
-                </span>
-              </motion.h1>
-              
-              {/* Subtle glow under title */}
-              <div className="absolute -bottom-4 left-0 h-px w-full bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
+                  {/* Glassmorphism inner layer */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-fuchsia-500/10" />
+                  
+                  {/* Placeholder image */}
+                  <img 
+                    src="/placeholder.svg" 
+                    alt="Avatar do Commander Bryan"
+                    className="h-full w-full object-cover opacity-80"
+                  />
+                  
+                  {/* Scanline overlay */}
+                  <div className="pointer-events-none absolute inset-0 opacity-20 [background:repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(6,182,212,0.1)_2px,rgba(6,182,212,0.1)_4px)]" />
+                  
+                  {/* Corner accents */}
+                  <div className="absolute left-0 top-0 h-8 w-8 border-l-2 border-t-2 border-cyan-400" />
+                  <div className="absolute bottom-0 right-0 h-8 w-8 border-b-2 border-r-2 border-fuchsia-500" />
+                </div>
+                
+                {/* HUD label */}
+                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap rounded border border-cyan-400/40 bg-slate-900/90 px-3 py-1 font-mono text-xs uppercase tracking-wider text-cyan-300 shadow-[0_0_10px_rgba(6,182,212,0.3)]">
+                  ID::OPERADOR_001
+                </div>
+              </motion.div>
             </div>
-
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="mb-8 max-w-2xl font-mono text-lg text-slate-400 sm:text-xl"
-            >
-              <span className="text-cyan-400">&gt;</span> Desenvolvedor Full Stack <span className="text-fuchsia-400">/</span> Especialista em Sistemas
-            </motion.p>
-
-            <motion.a
-              href="#operacoes"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-              whileHover={{ scale: 1.02, boxShadow: "0 0 40px rgba(6,182,212,0.4)" }}
-              whileTap={{ scale: 0.98 }}
-              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-lg border border-cyan-400/40 bg-gradient-to-r from-cyan-500/20 to-cyan-500/10 px-8 py-4 font-mono text-sm font-semibold uppercase tracking-[0.15em] text-cyan-100 transition-all duration-300 hover:border-cyan-400/60"
-            >
-              <span className="relative z-10 flex items-center gap-3">
-                INICIAR SISTEMA
-                <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </span>
-              <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
-            </motion.a>
           </div>
         </motion.div>
       </section>
@@ -209,46 +254,38 @@ export default function Home() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid gap-4 lg:grid-cols-2"
+          className="grid gap-6 lg:grid-cols-2"
         >
-          {/* Skills grid */}
-          <div className="space-y-4">
-            {habilidades.map((hab, index) => (
+          {/* Skills grid - Compact cards */}
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
+            {habilidades.map((hab) => (
               <motion.article
                 key={hab.name}
                 variants={itemVariants}
-                className="group relative overflow-hidden rounded-xl border border-slate-800/80 bg-slate-900/40 p-5 backdrop-blur-md transition-all duration-300 hover:border-cyan-500/30"
+                className="group relative overflow-hidden rounded-xl border border-slate-800/80 bg-slate-900/40 p-4 backdrop-blur-md transition-all duration-300 hover:border-cyan-500/30"
               >
                 {/* Hover glow */}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/5 to-cyan-500/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 
-                <div className="relative flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-cyan-500/30 bg-cyan-500/10">
-                      <hab.icon className="h-4 w-4 text-cyan-400" />
-                    </div>
-                    <span className="font-mono font-semibold text-slate-100">{hab.name}</span>
+                <div className="relative flex flex-col items-center gap-3 text-center">
+                  {/* Icon */}
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-500/30 bg-cyan-500/10 shadow-[0_0_15px_rgba(6,182,212,0.2)]">
+                    <hab.icon className="h-5 w-5 text-cyan-400 drop-shadow-[0_0_4px_rgba(6,182,212,0.8)]" />
                   </div>
-                  <span className="font-mono text-sm font-bold text-cyan-400">{hab.level}%</span>
-                </div>
-                
-                {/* HUD-style progress bar */}
-                <div className="relative h-2 overflow-hidden rounded-full bg-slate-800/80">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${hab.level}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.2, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                    className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-cyan-500 via-cyan-400 to-fuchsia-500"
-                  />
-                  {/* Animated glow */}
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${hab.level}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.2, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                    className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-cyan-500 via-cyan-400 to-fuchsia-500 blur-sm"
-                  />
+                  
+                  {/* Tech name */}
+                  <span className="font-mono text-sm font-semibold text-slate-100">{hab.name}</span>
+                  
+                  {/* Status badge */}
+                  {hab.status === "OPERACIONAL" ? (
+                    <span className="inline-flex items-center rounded border border-emerald-500/40 bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.3)]">
+                      [ OPERACIONAL ]
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center rounded border border-amber-500/40 bg-amber-500/10 px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.3)]">
+                      [ EM TREINAMENTO ]
+                    </span>
+                  )}
                 </div>
               </motion.article>
             ))}
