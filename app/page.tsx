@@ -277,15 +277,15 @@ export default function Home() {
                   <span className="font-mono text-sm font-semibold text-slate-100">{hab.name}</span>
                   
                   {/* Status badge */}
-                  {hab.status === "OPERACIONAL" ? (
-                    <span className="inline-flex items-center rounded border border-emerald-500/40 bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.3)]">
-                      [ OPERACIONAL ]
-                    </span>
-                  ) : (
-                    <span className="inline-flex items-center rounded border border-amber-500/40 bg-amber-500/10 px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.3)]">
-                      [ EM TREINAMENTO ]
-                    </span>
-                  )}
+                  {hab.status === "EM TREINAMENTO" ? (
+                        <span className="inline-flex items-center rounded border border-amber-500/40 bg-amber-500/10 px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.3)]">
+                          [ EM TREINAMENTO ]
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center rounded border border-emerald-500/40 bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.3)]">
+                          [ OPERACIONAL ]
+                        </span>
+                      )}
                 </div>
               </motion.article>
             ))}
