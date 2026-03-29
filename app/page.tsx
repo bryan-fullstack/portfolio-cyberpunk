@@ -17,9 +17,9 @@ import {
 import { Navbar } from "@/components/navbar"
 
 const habilidades = [
-  { name: "React", icon: Code, status: "OPERACIONAL" as const },
-  { name: "TypeScript", icon: Terminal, status: "OPERACIONAL" as const },
-  { name: "Tailwind CSS", icon: Layers, status: "OPERACIONAL" as const },
+  { name: "React", icon: Code, status: "EM TREINAMENTO" as const },
+  { name: "TypeScript", icon: Terminal, status: "EM TREINAMENTO" as const },
+  { name: "Tailwind CSS", icon: Layers, status: "EM TREINAMENTO" as const },
   { name: "Node.js", icon: Server, status: "EM TREINAMENTO" as const },
   { name: "PostgreSQL", icon: Database, status: "EM TREINAMENTO" as const },
 ]
@@ -109,7 +109,7 @@ export default function Home() {
               </div>
               <div className="ml-4 flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-1.5">
                 <Lock className="h-3 w-3 text-cyan-400" />
-                <span className="font-mono text-xs tracking-wider text-cyan-300">CONEXAO_SEGURA::ATIVA</span>
+                <span className="font-mono text-xs tracking-wider text-cyan-300">PERFIL_ATIVO::2026</span>
               </div>
             </div>
 
@@ -128,7 +128,7 @@ export default function Home() {
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-fuchsia-400 opacity-75" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-fuchsia-500" />
                   </span>
-                  Sistema Online
+                  PORTFÓLIO_OPERACIONAL
                 </motion.div>
 
                 {/* Main title with holographic glitch effect */}
@@ -140,20 +140,20 @@ export default function Home() {
                     className="relative text-balance font-mono text-4xl font-black uppercase tracking-[0.08em] text-white sm:text-6xl lg:text-7xl"
                   >
                     <span className="relative z-10 bg-gradient-to-r from-white via-cyan-100 to-white bg-clip-text text-transparent">
-                      COMMANDER BRYAN
+                      Bryan Pereira
                     </span>
                     {/* Holographic layers */}
                     <span
                       aria-hidden
                       className="pointer-events-none absolute inset-0 -translate-y-[2px] translate-x-[3px] bg-gradient-to-r from-cyan-400 to-cyan-300 bg-clip-text text-transparent opacity-50 blur-[1px]"
                     >
-                      COMMANDER BRYAN
+                      Bryan Pereira
                     </span>
                     <span
                       aria-hidden
                       className="pointer-events-none absolute inset-0 translate-y-[2px] -translate-x-[3px] bg-gradient-to-r from-fuchsia-500 to-fuchsia-400 bg-clip-text text-transparent opacity-40"
                     >
-                      COMMANDER BRYAN
+                      Bryan Pereira
                     </span>
                   </motion.h1>
                   
@@ -167,7 +167,7 @@ export default function Home() {
                   transition={{ delay: 0.6, duration: 0.6 }}
                   className="mb-8 max-w-2xl font-mono text-lg text-slate-400 sm:text-xl"
                 >
-                  <span className="text-cyan-400">&gt;</span> Desenvolvedor Full Stack <span className="text-fuchsia-400">/</span> Especialista em Sistemas
+                  <span className="text-cyan-400">&gt;</span> Desenvolvedor Full Stack <span className="text-fuchsia-400">/</span> Arquiteturas Robustas e Interfaces Imersivas
                 </motion.p>
 
                 <motion.a
@@ -180,7 +180,7 @@ export default function Home() {
                   className="group relative inline-flex items-center gap-3 overflow-hidden rounded-lg border border-cyan-400/40 bg-gradient-to-r from-cyan-500/20 to-cyan-500/10 px-8 py-4 font-mono text-sm font-semibold uppercase tracking-[0.15em] text-cyan-100 transition-all duration-300 hover:border-cyan-400/60"
                 >
                   <span className="relative z-10 flex items-center gap-3">
-                    INICIAR SISTEMA
+                    Explorar Projetos
                     <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
                   <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
@@ -222,7 +222,7 @@ export default function Home() {
                 
                 {/* HUD label */}
                 <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap rounded border border-cyan-400/40 bg-slate-900/90 px-3 py-1 font-mono text-xs uppercase tracking-wider text-cyan-300 shadow-[0_0_10px_rgba(6,182,212,0.3)]">
-                  ID::OPERADOR_001
+                  ID::Bryan_Pereira
                 </div>
               </motion.div>
             </div>
@@ -244,7 +244,7 @@ export default function Home() {
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-cyan-400">Modulo 01</span>
           </div>
           <h2 className="font-mono text-3xl font-bold uppercase tracking-[0.1em] text-white sm:text-4xl">
-            Telemetria de Habilidades
+            Minhas Habilidades
           </h2>
           <div className="mt-3 h-px w-24 bg-gradient-to-r from-cyan-500 to-transparent" />
         </motion.div>
