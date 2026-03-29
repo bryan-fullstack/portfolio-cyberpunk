@@ -17,6 +17,8 @@ import {
 import { Navbar } from "@/components/navbar"
 
 const habilidades = [
+  { name: "Oracle Database", icon: Database, status: "OPERACIONAL" as const },
+  { name: "Oracle APEX", icon: Zap, status: "OPERACIONAL" as const },
   { name: "React", icon: Code, status: "EM TREINAMENTO" as const },
   { name: "TypeScript", icon: Terminal, status: "EM TREINAMENTO" as const },
   { name: "Tailwind CSS", icon: Layers, status: "EM TREINAMENTO" as const },
@@ -26,28 +28,28 @@ const habilidades = [
 
 const operacoes = [
   {
-    titulo: "Neon Commerce Protocol",
+    titulo: "NEXUS_CORE_INVENTORY",
     classificacao: "ALFA-7",
-    stack: ["Next.js", "Tailwind", "Radix UI"],
-    descricao: "Interface de e-commerce de alta performance com sistemas de catálogo animado e checkout otimizado.",
-    link: "#",
-    status: "COMPLETO",
+    stack: ["Oracle DB", "PL/SQL", "APEX", "Bcrypt"],
+    descricao: "Sistema robusto de gestão de ativos e logística. Implementação de segurança via Bcrypt, triggers automatizados e procedures complexas para integridade de dados críticos.",
+    link: "https://github.com/bryan-plsql/gestao-estoque-oracle",
+    status: "OPERACIONAL",
   },
   {
-    titulo: "Sentinel Dashboard System",
-    classificacao: "OMEGA-9",
-    stack: ["React", "TypeScript", "Recharts"],
-    descricao: "Painéis de telemetria em tempo real com arquitetura de componentes avançada e visualização de dados.",
-    link: "#",
-    status: "COMPLETO",
+    titulo: "CYBER_PROFILE_INTERFACE",
+    classificacao: "GAMMA-4",
+    stack: ["Next.js", "Tailwind", "Framer Motion", "TypeScript"],
+    descricao: "Arquitetura de portfólio imersiva (este sistema). Foco em performance, animações por telemetria e UI/UX avançada com estética cyberpunk.",
+    link: "https://github.com/bryan-plsql/portfolio-cyberpunk",
+    status: "ATIVO",
   },
   {
-    titulo: "Cyber Arena Landing",
-    classificacao: "BETA-5",
-    stack: ["Framer Motion", "Lucide", "UX Motion"],
-    descricao: "Experiência de marketing cinematográfica com storytelling orientado por movimento e micro-interações.",
-    link: "#",
-    status: "COMPLETO",
+    titulo: "LEGACY_RPG_PROTOCOL",
+    classificacao: "DELTA-2",
+    stack: ["React", "CSS Modules", "Vite"],
+    descricao: "Protótipo de interface focado em gamificação e gerenciamento de estados para sistemas de RPG e interações dinâmicas.",
+    link: "https://github.com/bryan-plsql/portifolio-rpg",
+    status: "ARQUIVADO",
   },
 ]
 
@@ -300,27 +302,33 @@ export default function Home() {
             
             <h3 className="relative mb-6 flex items-center gap-2 font-mono text-sm font-semibold uppercase tracking-[0.15em] text-fuchsia-300">
               <Shield className="h-4 w-4" />
-              Perfil de Operador
+              Perfil de Operador :: Bryan
             </h3>
             
             <ul className="relative space-y-5 text-sm text-slate-300">
               <li className="flex items-start gap-3">
                 <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded border border-cyan-500/30 bg-cyan-500/10">
-                  <Zap className="h-3.5 w-3.5 text-cyan-400" />
+                  <Database className="h-3.5 w-3.5 text-cyan-400" />
                 </div>
-                <span>Velocidade de build otimizada para ciclos de deploy rapidos e CI/CD eficiente.</span>
+                <span>
+                  <strong className="text-cyan-300">Integração de Dados:</strong> Base prática construída com Oracle DB e APEX. Atualmente expandindo o arsenal com <span className="text-white">Supabase</span> para gerenciar backends e autenticações de forma ágil.
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded border border-fuchsia-500/30 bg-fuchsia-500/10">
-                  <Shield className="h-3.5 w-3.5 text-fuchsia-400" />
+                  <Terminal className="h-3.5 w-3.5 text-fuchsia-400" />
                 </div>
-                <span>Arquitetura de UI defensiva com componentes escalaveis e design system robusto.</span>
+                <span>
+                  <strong className="text-fuchsia-300">Controle e Curiosidade:</strong> Fluência em comandos <span className="text-white">Git</span> para versionamento seguro. Uma mente curiosa em fase de alto desenvolvimento, sempre dissecando documentações para absorver novas tecnologias.
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded border border-cyan-500/30 bg-cyan-500/10">
-                  <Radar className="h-3.5 w-3.5 text-cyan-400" />
+                  <Code className="h-3.5 w-3.5 text-cyan-400" />
                 </div>
-                <span>Foco em motion design, hierarquia visual e clareza na experiencia do usuario.</span>
+                <span>
+                  <strong className="text-cyan-300">Operador Full Stack (Jr):</strong> Evoluindo a cada deploy. Foco em construir interfaces modernas com React/Next.js, transformando lógica em experiências visuais de alto impacto.
+                </span>
               </li>
             </ul>
           </motion.article>
@@ -369,10 +377,13 @@ export default function Home() {
               <div className="relative p-6">
                 {/* Header */}
                 <div className="mb-4 flex items-center justify-between">
-                  <span className="font-mono text-xs uppercase tracking-wider text-cyan-400">
-                    Classe: {op.classificacao}
-                  </span>
-                  <span className="rounded border border-green-500/30 bg-green-500/10 px-2.5 py-1 font-mono text-xs uppercase text-green-400">
+                  <span className={`rounded border px-2.5 py-1 font-mono text-xs uppercase ${
+                    op.status === "ATIVO" 
+                      ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.2)]" 
+                      : op.status === "OPERACIONAL"
+                      ? "border-amber-500/30 bg-amber-500/10 text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.2)]"
+                      : "border-rose-500/30 bg-rose-500/10 text-rose-400 opacity-70" // ARQUIVADO
+                  }`}>
                     {op.status}
                   </span>
                 </div>
@@ -393,12 +404,14 @@ export default function Home() {
                 </div>
 
                 <a
-                  href={op.link}
-                  className="inline-flex items-center gap-2 font-mono text-sm font-medium text-cyan-400 transition-colors group-hover:text-fuchsia-400"
-                >
-                  <span>ACESSAR SISTEMA</span>
-                  <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
+                href={op.link}
+                target="_blank" // <-- Atributo para abrir em nova aba
+                rel="noopener noreferrer" // <-- Segurança para o navegador
+                className="inline-flex items-center gap-2 font-mono text-sm font-medium text-cyan-400 transition-colors group-hover:text-fuchsia-400"
+              >
+                <span>ACESSAR SISTEMA</span>
+                <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
               </div>
             </motion.article>
           ))}
