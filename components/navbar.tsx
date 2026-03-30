@@ -19,7 +19,7 @@ export function Navbar() {
           </span>
         </Link>
 
-        <div className="flex items-center gap-6 font-mono text-sm text-slate-400 sm:gap-8">
+        <div className="flex items-center gap-3 sm:gap-8 font-mono text-xs sm:text-sm text-slate-400">
           {navLinks.map((link) => (
             <Link
               key={link.name}

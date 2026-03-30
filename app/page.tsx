@@ -433,7 +433,7 @@ export default function Home() {
         <div className="relative bg-slate-900/60 backdrop-blur-lg border border-slate-800 rounded-3xl p-8 sm:p-12">
           
           {/* Cabeçalho da Seção com barra lateral fuchsia */}
-          <h2 className="font-orbitron text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tighter text-white border-l-4 border-fuchsia-500 pl-3 sm:pl-4 break-words">
+          <h2 className="font-orbitron text-xl sm:text-4xl lg:text-5xl font-extrabold tracking-tighter text-white border-l-4 border-fuchsia-500 pl-3 sm:pl-4">
             {`>`} TERMINAIS_DE_CONEXAO
           </h2>
           
@@ -498,9 +498,13 @@ export default function Home() {
               }}
               className="w-full group p-8 flex flex-col md:flex-row items-center justify-between border-2 border-fuchsia-500/50 bg-fuchsia-500/5 rounded-2xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(217,70,239,0.3)]"
             >
-              <div>
-                <h3 className="font-orbitron text-2xl font-extrabold text-white">BAIXAR_CURRÍCULO_CV</h3>
-                <p className="font-mono text-sm text-slate-400 mt-1">Perfil Profissional Consolidado (PDF)</p>
+              <div className="w-full pr-4"> 
+                <h3 className="font-orbitron text-lg sm:text-2xl font-extrabold text-white break-words sm:break-normal">
+                  BAIXAR_CURRÍCULO_CV
+                </h3>
+                <p className="font-mono text-xs sm:text-sm text-slate-400 mt-1">
+                  Perfil Profissional Consolidado (PDF)
+                </p>
               </div>
               
               {/* O "Botão" interno do Card com glow fuchsia no hover */}
