@@ -35,7 +35,7 @@ const operacoes = [
     classificacao: "ALFA-7",
     stack: ["Oracle DB", "PL/SQL", "APEX", "Bcrypt"],
     descricao: "Sistema robusto de gestão de ativos e logística. Implementação de segurança via Bcrypt, triggers automatizados e procedures complexas para integridade de dados críticos.",
-    link: "https://github.com/bryan-plsql/gestao-estoque-oracle",
+    link: "https://github.com/bryan-fullstack/gestao-estoque-oracle",
     status: "OPERACIONAL",
   },
   {
@@ -43,7 +43,7 @@ const operacoes = [
     classificacao: "GAMMA-4",
     stack: ["Next.js", "Tailwind", "Framer Motion", "TypeScript"],
     descricao: "Arquitetura de portfólio imersiva (este sistema). Foco em performance, animações por telemetria e UI/UX avançada com estética cyberpunk.",
-    link: "https://github.com/bryan-plsql/portfolio-cyberpunk",
+    link: "#",
     status: "ATIVO",
   },
   {
@@ -51,7 +51,7 @@ const operacoes = [
     classificacao: "DELTA-2",
     stack: ["React", "CSS Modules", "Vite"],
     descricao: "Protótipo de interface focado em gamificação e gerenciamento de estados para sistemas de RPG e interações dinâmicas.",
-    link: "https://github.com/bryan-plsql/portifolio-rpg",
+    link: "#",
     status: "ARQUIVADO",
   },
 ]
