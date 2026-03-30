@@ -425,7 +425,7 @@ export default function Home() {
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
 
        {/* 📡 ESTAÇÃO DE CONEXÃO :: TERMINAIS_FINAIS */}
-      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 mt-16 relative">
+      <section id="contato" className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 mt-16 relative">
         {/* Efeito de brilho de fundo (esfera borrada) */}
         <div className="absolute -left-20 -bottom-20 h-60 w-60 rounded-full bg-cyan-500/10 blur-[100px]" />
         
@@ -433,7 +433,7 @@ export default function Home() {
         <div className="relative bg-slate-900/60 backdrop-blur-lg border border-slate-800 rounded-3xl p-8 sm:p-12">
           
           {/* Cabeçalho da Seção com barra lateral fuchsia */}
-          <h2 className="font-orbitron text-4xl font-extrabold tracking-tighter text-white sm:text-5xl border-l-4 border-fuchsia-500 pl-4">
+          <h2 className="font-orbitron text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tighter text-white border-l-4 border-fuchsia-500 pl-3 sm:pl-4 break-words">
             {`>`} TERMINAIS_DE_CONEXAO
           </h2>
           
@@ -499,7 +499,7 @@ export default function Home() {
               className="w-full group p-8 flex flex-col md:flex-row items-center justify-between border-2 border-fuchsia-500/50 bg-fuchsia-500/5 rounded-2xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(217,70,239,0.3)]"
             >
               <div>
-                <h3 className="font-orbitron text-2xl font-extrabold text-white">BAIXAR_currículo_CV</h3>
+                <h3 className="font-orbitron text-2xl font-extrabold text-white">BAIXAR_CURRÍCULO_CV</h3>
                 <p className="font-mono text-sm text-slate-400 mt-1">Perfil Profissional Consolidado (PDF)</p>
               </div>
               

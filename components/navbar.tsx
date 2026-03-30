@@ -5,6 +5,7 @@ const navLinks = [
   { name: "Inicio", href: "/#home" },
   { name: "Habilidades", href: "/#about" },
   { name: "Projetos", href: "/#operacoes" },
+  { name: "Contato", href: "/#contato" },
 ]
 
 export function Navbar() {
