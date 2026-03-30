@@ -13,6 +13,9 @@ import {
   Shield,
   Terminal,
   Zap,
+  Linkedin,
+  Github,
+  FileText
 } from "lucide-react"
 import { Navbar } from "@/components/navbar"
 
@@ -420,6 +423,95 @@ export default function Home() {
 
       {/* Footer accent */}
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
+
+       {/* 📡 ESTAÇÃO DE CONEXÃO :: TERMINAIS_FINAIS */}
+      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 mt-16 relative">
+        {/* Efeito de brilho de fundo (esfera borrada) */}
+        <div className="absolute -left-20 -bottom-20 h-60 w-60 rounded-full bg-cyan-500/10 blur-[100px]" />
+        
+        {/* Container principal com glassmorphism e borda neon sutil */}
+        <div className="relative bg-slate-900/60 backdrop-blur-lg border border-slate-800 rounded-3xl p-8 sm:p-12">
+          
+          {/* Cabeçalho da Seção com barra lateral fuchsia */}
+          <h2 className="font-orbitron text-4xl font-extrabold tracking-tighter text-white sm:text-5xl border-l-4 border-fuchsia-500 pl-4">
+            {`>`} TERMINAIS_DE_CONEXAO
+          </h2>
+          
+          {/* Grid de Links de Redes Sociais */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mt-12">
+            
+            {/* TERMINAL: LINKEDIN */}
+            <motion.a 
+              href="https://www.linkedin.com/in/bryan-daniel-pereira-b5a3241b7/"
+              target="_blank" 
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.02 }}
+              className="group border border-slate-700/50 rounded-2xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:border-cyan-400/50 hover:bg-cyan-400/5"
+            >
+              <div className="rounded-full p-4 bg-slate-800 border border-slate-700 transition-all duration-300 group-hover:border-cyan-400 group-hover:shadow-[0_0_15px_rgba(34,211,238,0.5)]">
+                <Linkedin className="h-8 w-8 text-slate-400 group-hover:text-cyan-400 transition-colors" />
+              </div>
+              <h3 className="font-orbitron text-xl font-bold text-white mt-4">LINKEDIN_TERMINAL</h3>
+              <p className="font-mono text-sm text-slate-400 mt-1">in/bryan-daniel-pereira</p>
+              
+              <div className="mt-6 flex items-center gap-2 font-mono text-sm font-medium text-cyan-400">
+                <span>CONECTAR</span>
+                <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </div>
+            </motion.a>
+
+            {/* TERMINAL: GITHUB */}
+            <motion.a 
+              href="https://github.com/bryan-fullstack"
+              target="_blank" 
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.02 }}
+              className="group border border-slate-700/50 rounded-2xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:border-cyan-400/50 hover:bg-cyan-400/5"
+            >
+              <div className="rounded-full p-4 bg-slate-800 border border-slate-700 transition-all duration-300 group-hover:border-cyan-400 group-hover:shadow-[0_0_15px_rgba(34,211,238,0.5)]">
+                <Github className="h-8 w-8 text-slate-400 group-hover:text-cyan-400 transition-colors" />
+              </div>
+              <h3 className="font-orbitron text-xl font-bold text-white mt-4">GITHUB_REPOSITORY</h3>
+              <p className="font-mono text-sm text-slate-400 mt-1">@bryan-fullstack</p>
+              
+              <div className="mt-6 flex items-center gap-2 font-mono text-sm font-medium text-cyan-400">
+                <span>CONECTAR</span>
+                <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </div>
+            </motion.a>
+          </div>
+
+          {/* 💾 ÁREA DE PROTOCOLO DE DADOS :: DOWNLOAD_CV */}
+          <div className="mt-12 space-y-8">
+            <p className="font-mono text-sm text-slate-400 max-w-2xl">
+              Acesso completo ao histórico profissional e técnico em formato consolidado.
+            </p>
+            
+            {/* O Grande Botão/Card de Download (Em fuchsia) */}
+            <motion.a 
+              href="/bryan_cv.pdf" 
+              download 
+              whileHover={{ 
+                scale: 1.02,
+                borderColor: "#d946ef80", // Fuchsia-500 com 50% transparência
+                backgroundColor: "rgba(217, 70, 239, 0.1)" // Fuchsia fundo sutil
+              }}
+              className="w-full group p-8 flex flex-col md:flex-row items-center justify-between border-2 border-fuchsia-500/50 bg-fuchsia-500/5 rounded-2xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(217,70,239,0.3)]"
+            >
+              <div>
+                <h3 className="font-orbitron text-2xl font-extrabold text-white">BAIXAR_currículo_CV</h3>
+                <p className="font-mono text-sm text-slate-400 mt-1">Perfil Profissional Consolidado (PDF)</p>
+              </div>
+              
+              {/* O "Botão" interno do Card com glow fuchsia no hover */}
+              <div className="flex items-center gap-3 px-8 py-4 mt-6 md:mt-0 rounded-full bg-fuchsia-500 text-slate-950 font-orbitron text-lg font-extrabold shadow-[0_4px_10px_rgba(217,70,239,0.4)] transition-all duration-300 group-hover:bg-fuchsia-400 group-hover:shadow-[0_6px_20px_rgba(217,70,239,0.6)]">
+                <span>DOWNLOAD_CV</span>
+                <FileText className="h-5 w-5" />
+              </div>
+            </motion.a>
+          </div>
+        </div>
+      </section>   
     </main>
   )
 }
