@@ -31,28 +31,28 @@ const habilidades = [
 
 const operacoes = [
   {
-    titulo: "NEXUS_CORE_INVENTORY",
-    classificacao: "ALFA-7",
-    stack: ["Oracle DB", "PL/SQL", "APEX", "Bcrypt"],
-    descricao: "Sistema robusto de gestão de ativos e logística. Implementação de segurança via Bcrypt, triggers automatizados e procedures complexas para integridade de dados críticos.",
-    link: "https://github.com/bryan-fullstack/gestao-estoque-oracle",
-    status: "OPERACIONAL",
-  },
-  {
     titulo: "CYBER_PROFILE_INTERFACE",
     classificacao: "GAMMA-4",
     stack: ["Next.js", "Tailwind", "Framer Motion", "TypeScript"],
     descricao: "Arquitetura de portfólio imersiva (este sistema). Foco em performance, animações por telemetria e UI/UX avançada com estética cyberpunk.",
-    link: "#",
+    link: "https://github.com/bryan-fullstack/portfolio-cyberpunk",
     status: "ATIVO",
   },
   {
-    titulo: "LEGACY_RPG_PROTOCOL",
-    classificacao: "DELTA-2",
-    stack: ["React", "CSS Modules", "Vite"],
-    descricao: "Protótipo de interface focado em gamificação e gerenciamento de estados para sistemas de RPG e interações dinâmicas.",
-    link: "#",
-    status: "ARQUIVADO",
+    titulo: "ORACLE_APEX_OPERATIONS",
+    classificacao: "ALPHA-1",
+    stack: ["Oracle APEX", "PL/SQL", "Oracle DB", "Integração"],
+    descricao: "Sistema robusto de gestão desenvolvido no ecossistema Oracle. Lógica de negócios em PL/SQL com foco em segurança de dados, alta disponibilidade e performance corporativa.",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7459032936013541376/", 
+    status: "ATIVO", 
+  },
+ {
+    titulo: "LOOT_TRACKER",
+    classificacao: "SIGMA-7",
+    stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind", "Recharts"],
+    descricao: "Sistema de inteligência financeira para gestão de logística e ativos. Implementa autenticação híbrida (Supabase Auth) com controle de permissões (Admin/Guest), CRUD completo integrado ao PostgreSQL e telemetria de dados com gráficos interativos em tempo real.",
+    link: "https://loot-tracker-seven.vercel.app/",
+    status: "ATIVO",
   },
 ]
 
